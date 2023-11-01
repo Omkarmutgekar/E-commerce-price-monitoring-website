@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Track_Price</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='website/index.css') }}">
+
+    <link href="https://fonts.googleapis.com/css?family=Tomorrow&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+  </head>
+  <body class="home">
+    <header>
+      <div class="hea">
+        <div class="logo">
+<h1><span>P</span>RICE   <span style="padding-left:10px;">T</span>AG</h1>        </div>
+
+        <div class="menu">
+          <a href="#" style="display:none;">About Us</a>
+          <a href="#" style="display:none;">Sites</a>
+          <a href="{{ url_for('profile')}}">Profile</a>
+          <a href="#">Dashboard</a>
+          <a href="{{ url_for('home')}}" class="hom">Home</a>
+        </div>
+      </div>
+    </header>
+
+
+
+<table id="flashmsg">
+    <tr rowspan=2>
+  {% with msg = get_flashed_messages() %}
+            {% if msg %}
+                {% for i in range(5) %}
+                    {% if i == 1 %}
+                     <td name="{{ msg[i] }}"><input type="hidden" name = "{{msg[i]}}" value="{{ msg[i] }}"/><img src='{{ msg[i] }}' style='width:110px;height:110px;'/></td>
+                    {% else %}
+                    <td name="{{ msg[i] }}"><input type="hidden" name="{{msg[i]}}" value="{{ msg[i] }}"/>{{msg[i]}}</td>
+                    {% endif %}
+                {% endfor %}
+          {% endif %}
+          {% endwith %}
+    </tr>
+</table>
+
+
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Login Form</title>
+	 <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='website/style.css') }}">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+ <div class="menu1">
+        <ul>
+            <li><a href="{{ url_for('homepage')}}"><i class="fa fa-home"></i> Home</a> </li>
+            <li><a href="{{ url_for('login')}}"><i class="fa fa-sign-out-alt"></i>LOGIN</a> </li>
+			<li><a href="{{ url_for('services')}}"> <i class="fa fa-address-card"></i>  SERVICES</a> </li>
+
+ 		</ul>
+        </div>
+
+	<img class="wave" src="{{ url_for('static', filename='img/wave4.png') }}">
+	<div class="container">
+		<div class="img">
+			<img src= "{{ url_for('static', filename='img/online_shopping.svg') }}">
+		</div>
+		<div class="login-content">
+			<form  method="post">
+				<img src="{{ url_for('static', filename='img/profile_pic_.svg') }}">
+				<h2 class="title">Welcome</h2>
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Username</h5>
+           			   <input type="text" class="input" name="user">
+           		   </div>
+           		</div>
+           		<div class="input-div pass">
+           		   <div class="i">
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Password</h5>
+         			    <input type="password" class="input" name="pas">
+            	   </div>
+            	</div>
+				<button class="btn" type="submit" name="login" >Log In</button>
+				<a href="{{ url_for('signup1')}}">Create new account?</a><a href="{{ url_for('forgetpass') }}" style="padding-left:15px;">Forgot Password?</a>
+            </form>
+        </div>
+    </div>
+   </body>
+</html>

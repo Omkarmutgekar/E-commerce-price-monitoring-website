@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+	  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='website/home.css') }}">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header class="site-headers">
+  
+	<div class="logo">
+    <img src="{{ url_for('static', filename='img/price tag logo.png') }}" width="350" height="210">
+	</div>
+ <div class="menu1">
+        <ul>
+            <li><a href="{{ url_for('homepage')}}"><i class="fa fa-home"></i> Home</a> </li>
+            <li><a href="{{ url_for('login')}}"><i class="fa fa-sign-out-alt"></i>LOGIN</a> </li>
+			<li><a href="{{ url_for('services')}}"><i class="fa fa-address-card"></i>  SERVICES</a> </li>
+
+ 		</ul>
+        </div>	
+<section>
+	<div class="leftside">  
+	 <img src="{{ url_for('static', filename='img/logo.png') }}">
+	 
+	</div>
+	<div class="rightside"> 
+	<h1>E-commerce Price Monitoring</h1>
+    <P>Track your competitor's prices and get reports on every price change and new products. The user can view all the product’s prices which he/she is tracking on a single page and does not need to go the every product page to know the current price of that product. </P>
+		<div class="btn"><a href="{{ url_for('signup1')}}"><input type="submit" class="signbtn" value="SIGN UP"></a></div>
+	</div>
+	</section>
+</header>
+	
+</body>
+	
+</html>

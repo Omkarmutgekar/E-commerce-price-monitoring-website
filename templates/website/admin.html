@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='website/index.css') }}">
+</head>
+<body  background="{{ url_for('static', filename='img/172280.jpg') }}">
+       <header>
+      <div class="hea">
+        <div class="logo">
+<h1><span>P</span>RICE   <span style="padding-left:10px;">T</span>AG</h1>        </div>
+
+        <div class="menu">
+          <a href="#" style="display:none;">About Us</a>
+          <a href="#" style="display:none;">Sites</a>
+
+            <a href="{{ url_for('login') }}" >Log Out</a>
+            <a href="{{ url_for('admin') }}">Users</a>
+        </div>
+      </div>
+    </header>
+
+<table>
+    <tr><th>Name</th>
+    <th>Email</th>
+    <th>Mobile Number</th>
+    </tr>
+    {% for i in range(0,l,3)%}
+    <tr>
+    <td>{{ userss[i] }}</td>
+    <td>{{ userss[i+1] }}</td>
+    <td>{{ userss[i+2] }}</td>
+    <td><a href="{{ url_for('admindash', user=userss[i+1], delete=0)}}">View Products</a></td>
+    </tr>
+{% endfor %}
+</table>
+
+
+</body>
+</html>

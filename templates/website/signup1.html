@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animated Login Form</title>
+	 <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='website/signup.css') }}">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<img class="wave" src="{{ url_for('static', filename='img/wave4.png') }}">>
+	<div class="container">
+		<div class="img">
+			<img src= "{{ url_for('static', filename='img/online_shopping.svg') }}">
+		</div>
+		
+		<div class="login-content">
+			
+		<form name="signupform" class="sign" method="post">
+
+          {% with msg = get_flashed_messages() %}
+            {% if msg %}
+                {% for i in msg %}
+                    <p style="color:red;text-decoration:underline;">{{ i }}</p>
+                {% endfor %}
+          {% endif %}
+          {% endwith %}
+
+				<img src="{{ url_for('static', filename='img/profile_pic_.svg') }}">
+				<h2 class="title">details</h2>
+           			
+           		<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Username</h5>
+           		    	<input type="text" name="name" class="input">
+            	   </div>
+            	</div>
+				
+				<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>E-mail</h5>
+           		    	<input type="text"  name="user" class="input">
+            	   </div>
+            	</div>
+				
+				<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Password</h5>
+           		    	<input type="password" name="pas">
+            	   </div>
+            	</div>
+				
+				
+				<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Confirm Password</h5>
+           		    	<input type="password" name="cpas">
+            	   </div>
+            	</div>
+				<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Mobile</h5>
+           		    	<input type="text" name="mob">
+            	   </div>
+            	</div>
+				
+            	
+            	<input type="submit" class="btn" name="signin" value="Sign in">
+				 <a href="{{ url_for('login')}}">Already have an account? Please Log in</a>
+		</form>
+			
+				
+        </div>
+    </div>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
